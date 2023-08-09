@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EasyCashIdentityProject.EntityLayer.ConCceate;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace EasyCashIdentityProject.EntityLayer.Conceate
         public string District { get; set; }
         public string City { get; set; }
         public string ImageUrl { get; set; }
+        public List<CustomerAccount> CustomerAccounts { get; set; }
+
     }
 }
