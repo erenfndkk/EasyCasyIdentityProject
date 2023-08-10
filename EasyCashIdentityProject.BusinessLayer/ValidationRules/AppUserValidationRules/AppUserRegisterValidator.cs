@@ -20,7 +20,7 @@ namespace EasyCashIdentityProject.BusinessLayer.ValidationRules.AppUserValidatio
             RuleFor(appUser => appUser.Password).NotEmpty().WithMessage("Şifre alanı boş geçilemez");
             RuleFor(appUser => appUser.ConfirmPassword).NotEmpty().WithMessage("Şifre tekrar alanı boş geçilemez");
             RuleFor(appUser => appUser.Password).Equal(appUser2 => appUser2.ConfirmPassword).WithMessage("Şifre ve şifre tekrar alanları aynı değil");
-            RuleFor(appUser => appUser.Email).EmailAddress().WithMessage("Lütfen geçerli bir e posta adresi giriniz");
+            RuleFor(appUser => appUser.Email).EmailAddress().WithMessage("Lütfen geçerli bir mail adresi giriniz");
         }
     }
 }
