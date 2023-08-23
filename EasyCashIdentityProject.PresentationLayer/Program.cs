@@ -1,5 +1,6 @@
 using EasyCashIdentityProject.DataAccessLayer.Concreate;
 using EasyCashIdentityProject.EntityLayer.Conceate;
+using EasyCashIdentityProject.PresentationLayer.Models;
 using Microsoft.Win32;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>
+    ().AddErrorDescriber<CustomIdentityValidator>();
 
 var app = builder.Build();
 
