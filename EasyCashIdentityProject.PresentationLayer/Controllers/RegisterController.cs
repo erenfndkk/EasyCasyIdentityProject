@@ -61,6 +61,9 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     smtpClient.Send(mimeMessage);
                     smtpClient.Disconnect(true);
 
+                    //tempdata conmtrollerdan view'a veri taşıma yöntemidir.
+                    TempData["Mail"] = appUserRegisterDto.Email;
+
                     return RedirectToAction("Index", "ConfirmMail");
                 }
                 else
